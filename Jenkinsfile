@@ -5,11 +5,9 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                sh 'apt install openjdk-11-jdk'
-                sh 'add-apt-repository ppa:cwchien/gradle'
-                sh 'apt-get update'
-                sh 'apt-get install gradle'
-                sh 'gradle wrapper'
+                withGradle {
+                    sh './gradlew build'
+                }
             }
         }
 
