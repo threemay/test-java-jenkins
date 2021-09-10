@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 withGradle {
-                    sh './gradlew --version'
+                    sh 'gradle wrapper'
                 }
             }
         }
