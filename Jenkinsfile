@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 withGradle {
-                    sh './gradlew -v'
+                    sh './gradlew build'
                 }
             }
         }
