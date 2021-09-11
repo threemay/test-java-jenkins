@@ -1,13 +1,9 @@
 pipeline {
     agent any
 
-    node {
-        withGradle {
-            sh './gradlew build'
-        }
-    }
 
     stages {
+
         stage('Hello') {
             steps {
                 echo 'Hello World'
