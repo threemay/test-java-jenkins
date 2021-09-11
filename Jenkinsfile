@@ -4,18 +4,21 @@ pipeline {
 
     stages {
 
-        stage('Hello') {
+        stage('build') {
+            steps {
+                echo 'Hello World'
+                withGradle {
+                    sh './gradlew build'
+                }
+            }
+        }
+
+        stage('test') {
             steps {
                 echo 'Hello World'
                 withGradle {
                     sh './gradlew run'
                 }
-            }
-        }
-
-        stage('Hello1') {
-            steps {
-                echo 'Hello World'
             }
         }
 
